@@ -1,1 +1,14 @@
 /* Insert here specific css codes to affect the main page */
+.logo{
+    width:45px;
+}
+.register{
+    font-size: 1rem!important;
+
+}
+.btn-purple{
+    background-color: #563d7c;
+}
+.light-font{
+    color: #ffff;
+}
