@@ -1,5 +1,7 @@
 <?php
-namespace App\brain;
+namespace App\Brain;
+use App\Traits\Data;
+require __DIR__ .'/../../vendor/autoload.php';
 
 /**
 * @var number | int;
@@ -8,42 +10,13 @@ namespace App\brain;
 */
 class  Lottery
 {
-    private $url;
-    private $current_draw;
-    private $container;
-    public function __construct(){
-        $url = $this->url = "http://lotodicas.com.br/api/lotofacil/";
+    // call the trait containing the data
+    use Data;
 
-        //Get Current Draw - numero & sorteio[]
-        $json_file = file_get_contents($this->url);
-        $json_str = json_decode($json_file, true);
-        $this->current_draw = ([
-            "numero" => $json_str['numero'],
-            "sorteio" =>$json_str['sorteio']
-        ]);
-        $current_draw = $this->current_draw;
-
-        $this->container = ([
-            "url" => $url,
-            "draw" =>$current_draw
-        ]);
-        return $this->container;
-    }
-    // public function getCurrentDraw(){
-    //     $json_file = file_get_contents($this->url);
-    //     $json_str = json_decode($json_file, true);
-    //     $this->current_draw = ([
-    //         "numero" => $json_str['numero'],
-    //         "sorteio" =>$json_str['sorteio']
-    //     ]);
-    //
-    //     return $this->current_draw;
-    // }
     public function getByAmount($amount){
         var_dump($amount);
-        print_r($this->container);
 
-
+        print_r($this->dataSource());
         die();
 
         for ($amount; $amount > 0 ; $amount--) {
