@@ -1,5 +1,5 @@
 <?php
-namespace brain;
+namespace App\brain;
 
 /**
 *

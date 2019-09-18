@@ -1,19 +1,18 @@
 # lottery
 
 ## Sistema
+```php
 
-``` bash
-|-- Application
-    |-- app
-        |-- ArtificialBrain.php
-        |-- Lottery.php
-    |-- index.php
-    |-- assets
-        |-- js
-        |-- css
-   
+class Lottery extends AnotherClass
+{
+
+    function __construct(argument)
+    {
+        # code...
+    }
+}
 ```
-    
+
 # Classe: ArtificialBrain
 ## Métodos
 

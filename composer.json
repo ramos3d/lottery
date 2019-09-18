@@ -1,0 +1,14 @@
+{
+    "description": "Lottery system",
+    "authors": [
+        {
+            "name": "Marcelo Ramos Soares",
+            "email": "marceloxramos3d@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+}
