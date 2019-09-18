@@ -11,6 +11,7 @@ class  Lottery
     private $url;
     private $current_draw;
     private $container;
+
     public function __construct(){
         $url = $this->url = "http://lotodicas.com.br/api/lotofacil/";
 
@@ -40,8 +41,8 @@ class  Lottery
     //     return $this->current_draw;
     // }
     public function getByAmount($amount){
-        var_dump($amount);
-        print_r($this->container);
+
+        print_r($this->container); // [numero] & [sorteio]
 
 
         die();
