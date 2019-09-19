@@ -14,40 +14,23 @@ class  Lottery
     use Data;
 
     public function getByAmount($amount){
-        var_dump($amount);
+        $data = $this->dataSource();
 
-        print_r($this->dataSource());
-        die();
-
-        for ($amount; $amount > 0 ; $amount--) {
-            $json_file = file_get_contents("http://lotodicas.com.br/api/lotofacil/$numero");
-            $json_str = json_decode($json_file, true);
-            $sorteio = $json_str['sorteio'];
-            $numero = $json_str['numero'];
-            echo "<p>$numero</p>";
-            //print_r ($json_str['sorteio']);
-            $array = $json_str['sorteio'];
-            $games [$i] = $array;
-            $i++;
-            print_r ($array);
-
+        for ($x = 0; $x< $amount; $x ++) {
+            $new_number = $data['numero'] - $x;
+            $draw[$x] = $this->dataSource($new_number)['sorteios'];
         }
-
-
+        return $draw; // json só de [sorteios]
     }
 
     public function getLastDraw(){
-        $url = $this->url;
-        $json_file = file_get_contents($url);
-        $json_str = json_decode($json_file, true);
-        $number = $json_str['numero'];
-        return $number;
+        return $this->dataSource();
     }
 }
 
 $obj = new Lottery;
 // print($obj->getLastDraw());
 $amount = 2;
-echo "<pre>";
-// print_r($obj->getCurrentDraw()); // array: numero  & sorteio
+// print_r($obj->getLastDraw());
+//print_r($obj->getLastDraw()); // array: numero  & sorteio
 print_r($obj->getByAmount($amount)); // array: numero  & sorteio
