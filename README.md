@@ -1,4 +1,4 @@
-# lottery
+# :game_die: Lottery
 
 ## Sistema
 ```php
