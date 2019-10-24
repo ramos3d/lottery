@@ -72,10 +72,3 @@ class  Lottery
         return $number;
     }
 }
-
-$obj = new Lottery;
-// print($obj->getLastDraw());
-$amount = 2;
-echo "<pre>";
-// print_r($obj->getCurrentDraw()); // array: numero  & sorteio
-print_r($obj->getByAmount($amount)); // array: numero  & sorteio
