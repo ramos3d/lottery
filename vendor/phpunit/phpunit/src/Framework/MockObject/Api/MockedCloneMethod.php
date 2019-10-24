@@ -16,6 +16,10 @@ trait MockedCloneMethod
 {
     public function __clone()
     {
+<<<<<<< HEAD
         $this->__phpunit_invocationMocker = clone $this->__phpunit_getInvocationHandler();
+=======
+        $this->__phpunit_invocationMocker = clone $this->__phpunit_getInvocationMocker();
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     }
 }

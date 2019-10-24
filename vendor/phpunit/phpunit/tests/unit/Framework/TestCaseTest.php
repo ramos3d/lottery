@@ -10,7 +10,10 @@
 namespace PHPUnit\Framework;
 
 use PHPUnit\Framework\MockObject\MockObject;
+<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\Stub;
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Runner\BaseTestRunner;
 use PHPUnit\Util\Test as TestUtil;
 
@@ -833,12 +836,17 @@ final class TestCaseTest extends TestCase
 
     public function testCreateMockMocksAllMethods(): void
     {
+<<<<<<< HEAD
+=======
+        /** @var \Mockable $mock */
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         $mock = $this->createMock(\Mockable::class);
 
         $this->assertNull($mock->mockableMethod());
         $this->assertNull($mock->anotherMockableMethod());
     }
 
+<<<<<<< HEAD
     public function testCreateStubFromClassName(): void
     {
         $mock = $this->createStub(\Mockable::class);
@@ -855,6 +863,8 @@ final class TestCaseTest extends TestCase
         $this->assertNull($mock->anotherMockableMethod());
     }
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     public function testCreatePartialMockDoesNotMockAllMethods(): void
     {
         /** @var \Mockable $mock */
@@ -895,6 +905,10 @@ final class TestCaseTest extends TestCase
 
     public function testCreateMockSkipsConstructor(): void
     {
+<<<<<<< HEAD
+=======
+        /** @var \Mockable $mock */
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         $mock = $this->createMock(\Mockable::class);
 
         $this->assertNull($mock->constructorArgs);
@@ -902,12 +916,17 @@ final class TestCaseTest extends TestCase
 
     public function testCreateMockDisablesOriginalClone(): void
     {
+<<<<<<< HEAD
+=======
+        /** @var \Mockable $mock */
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         $mock = $this->createMock(\Mockable::class);
 
         $cloned = clone $mock;
         $this->assertNull($cloned->cloned);
     }
 
+<<<<<<< HEAD
     public function testCreateStubSkipsConstructor(): void
     {
         $mock = $this->createStub(\Mockable::class);
@@ -923,6 +942,8 @@ final class TestCaseTest extends TestCase
         $this->assertNull($cloned->cloned);
     }
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     public function testConfiguredMockCanBeCreated(): void
     {
         /** @var \Mockable $mock */
@@ -953,7 +974,10 @@ final class TestCaseTest extends TestCase
             [123],
             ['foo'],
             [$this->createMock(\Mockable::class)],
+<<<<<<< HEAD
             [$this->createStub(\Mockable::class)],
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         ];
 
         $test = new \TestAutoreferenced('testJsonEncodeException', [$data]);
@@ -1173,6 +1197,7 @@ final class TestCaseTest extends TestCase
         $this->assertTrue($test->hasOutput());
     }
 
+<<<<<<< HEAD
     public function testDeprecationCanBeExpected(): void
     {
         $this->expectDeprecation();
@@ -1209,6 +1234,8 @@ final class TestCaseTest extends TestCase
         \trigger_error('foo', \E_USER_ERROR);
     }
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     /**
      * @return array<string, array>
      */

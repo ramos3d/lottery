@@ -9,7 +9,11 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\InvalidArgumentException;
+=======
+use PHPUnit\Util\InvalidArgumentHelper;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
 /**
  * Constraint that asserts that the string it is evaluated for begins with a
@@ -25,7 +29,11 @@ final class StringStartsWith extends Constraint
     public function __construct(string $prefix)
     {
         if (\strlen($prefix) === 0) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'non-empty string');
+=======
+            throw InvalidArgumentHelper::factory(1, 'non-empty string');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         $this->prefix = $prefix;

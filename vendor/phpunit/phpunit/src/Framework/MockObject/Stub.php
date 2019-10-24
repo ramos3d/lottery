@@ -9,6 +9,7 @@
  */
 namespace PHPUnit\Framework\MockObject;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\Builder\InvocationStubber;
 
 /**
@@ -17,6 +18,16 @@ use PHPUnit\Framework\MockObject\Builder\InvocationStubber;
 interface Stub
 {
     public function __phpunit_getInvocationHandler(): InvocationHandler;
+=======
+use PHPUnit\Framework\MockObject\Builder\InvocationMocker as BuilderInvocationMocker;
+
+/**
+ * @method BuilderInvocationMocker method($constraint)
+ */
+interface Stub
+{
+    public function __phpunit_getInvocationMocker(): InvocationMocker;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
     public function __phpunit_hasMatchers(): bool;
 

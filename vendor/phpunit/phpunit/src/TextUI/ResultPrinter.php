@@ -11,7 +11,10 @@ namespace PHPUnit\TextUI;
 
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Exception;
+<<<<<<< HEAD
 use PHPUnit\Framework\InvalidArgumentException;
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestFailure;
@@ -21,6 +24,10 @@ use PHPUnit\Framework\TestSuite;
 use PHPUnit\Framework\Warning;
 use PHPUnit\Runner\PhptTestCase;
 use PHPUnit\Util\Color;
+<<<<<<< HEAD
+=======
+use PHPUnit\Util\InvalidArgumentHelper;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Util\Printer;
 use SebastianBergmann\Environment\Console;
 use SebastianBergmann\Timer\Timer;
@@ -126,14 +133,22 @@ class ResultPrinter extends Printer implements TestListener
         parent::__construct($out);
 
         if (!\in_array($colors, self::AVAILABLE_COLORS, true)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 3,
                 \vsprintf('value from "%s", "%s" or "%s"', self::AVAILABLE_COLORS)
             );
         }
 
         if (!\is_int($numberOfColumns) && $numberOfColumns !== 'max') {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(5, 'integer or "max"');
+=======
+            throw InvalidArgumentHelper::factory(5, 'integer or "max"');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         $console            = new Console;
@@ -522,7 +537,11 @@ class ResultPrinter extends Printer implements TestListener
         $styledLines = [];
 
         foreach ($lines as $line) {
+<<<<<<< HEAD
             $styledLines[] = Color::colorize($color, \str_pad($line, $padding));
+=======
+            $styledLines[] = Color::colorize($color, \str_pad($line, $padding), false);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         return \implode(\PHP_EOL, $styledLines);

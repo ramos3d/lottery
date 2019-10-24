@@ -9,6 +9,7 @@ namespace PHPSTORM_META {
     );
 
     override(
+<<<<<<< HEAD
         \PHPUnit\Framework\TestCase::createStub(0),
         map([
             '@&\PHPUnit\Framework\MockObject\Stub',
@@ -16,6 +17,8 @@ namespace PHPSTORM_META {
     );
 
     override(
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         \PHPUnit\Framework\TestCase::createConfiguredMock(0),
         map([
             '@&\PHPUnit\Framework\MockObject\MockObject',

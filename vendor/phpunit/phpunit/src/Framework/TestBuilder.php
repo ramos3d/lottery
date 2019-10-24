@@ -131,13 +131,19 @@ final class TestBuilder
         return $message;
     }
 
+<<<<<<< HEAD
     /** @psalm-param class-string $className */
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     private function buildTestWithoutData(string $className)
     {
         return new $className;
     }
 
+<<<<<<< HEAD
     /** @psalm-param class-string $className */
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     private function buildDataProviderTestSuite(
         string $methodName,
         string $className,

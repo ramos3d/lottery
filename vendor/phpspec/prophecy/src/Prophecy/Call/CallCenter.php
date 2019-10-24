@@ -12,6 +12,10 @@
 namespace Prophecy\Call;
 
 use Prophecy\Exception\Prophecy\MethodProphecyException;
+<<<<<<< HEAD
+=======
+use Prophecy\Prophecy\MethodProphecy;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Argument\ArgumentsWildcard;
 use Prophecy\Util\StringUtil;
@@ -193,6 +197,31 @@ class CallCenter
         );
     }
 
+<<<<<<< HEAD
+=======
+    private function formatExceptionMessage(MethodProphecy $methodProphecy)
+    {
+        return sprintf(
+            "  - %s(\n".
+            "%s\n".
+            "    )",
+            $methodProphecy->getMethodName(),
+            implode(
+                ",\n",
+                $this->indentArguments(
+                    array_map(
+                        function ($token) {
+                            return (string) $token;
+                        },
+                        $methodProphecy->getArgumentsWildcard()->getTokens()
+                    ),
+                    $indentationLength
+                )
+            )
+        );
+    }
+
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     private function indentArguments(array $arguments, $indentationLength)
     {
         return preg_replace_callback(

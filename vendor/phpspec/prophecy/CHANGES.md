@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1.9.0 / 2019/10/03
 ==================
 
@@ -5,6 +6,8 @@
 * [fixed] Allow `MethodProphecy::willThrow()` to accept Throwable as string (@timoschinkel )
 * [fixed] Allow new version of phpdocumentor/reflection-docblock (@ricpelo)
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 1.8.1 / 2019/06/13
 ==================
 

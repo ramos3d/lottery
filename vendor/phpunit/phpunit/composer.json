@@ -83,7 +83,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "8.4-dev"
+=======
+            "dev-master": "8.3-dev"
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
     }
 }

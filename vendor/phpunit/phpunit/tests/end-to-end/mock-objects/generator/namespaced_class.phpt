@@ -50,7 +50,11 @@ class MockFoo extends NS\Foo implements PHPUnit\Framework\MockObject\MockObject
             }
         }
 
+<<<<<<< HEAD
         $__phpunit_result = $this->__phpunit_getInvocationHandler()->invoke(
+=======
+        $__phpunit_result = $this->__phpunit_getInvocationMocker()->invoke(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
             new \PHPUnit\Framework\MockObject\Invocation(
                 'NS\Foo', 'bar', $__phpunit_arguments, '', $this, true
             )
@@ -72,7 +76,11 @@ class MockFoo extends NS\Foo implements PHPUnit\Framework\MockObject\MockObject
             }
         }
 
+<<<<<<< HEAD
         $__phpunit_result = $this->__phpunit_getInvocationHandler()->invoke(
+=======
+        $__phpunit_result = $this->__phpunit_getInvocationMocker()->invoke(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
             new \PHPUnit\Framework\MockObject\Invocation(
                 'NS\Foo', 'baz', $__phpunit_arguments, '', $this, true
             )

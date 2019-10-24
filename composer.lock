@@ -1,7 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
+<<<<<<< HEAD
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+=======
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         "This file is @generated automatically"
     ],
     "content-hash": "7ac69bab358a14faafdf4864a1b16e05",
@@ -365,6 +369,7 @@
         },
         {
             "name": "phpspec/prophecy",
+<<<<<<< HEAD
             "version": "1.9.0",
             "source": {
                 "type": "git",
@@ -375,12 +380,28 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f6811d96d97bdf400077a0cc100ae56aa32b9203",
                 "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203",
+=======
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpspec/prophecy.git",
+                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
+                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
+<<<<<<< HEAD
                 "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
+=======
+                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 "sebastian/comparator": "^1.1|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
@@ -424,7 +445,11 @@
                 "spy",
                 "stub"
             ],
+<<<<<<< HEAD
             "time": "2019-10-03T11:07:50+00:00"
+=======
+            "time": "2019-06-13T12:50:23+00:00"
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -680,6 +705,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "8.4.1",
             "source": {
                 "type": "git",
@@ -690,6 +716,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/366a4a0f2b971fd43b7c351d621e8dd7d7131869",
                 "reference": "366a4a0f2b971fd43b7c351d621e8dd7d7131869",
+=======
+            "version": "8.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "302faed7059fde575cf3403a78c730c5e3a62750"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/302faed7059fde575cf3403a78c730c5e3a62750",
+                "reference": "302faed7059fde575cf3403a78c730c5e3a62750",
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 "shasum": ""
             },
             "require": {
@@ -733,7 +771,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-master": "8.4-dev"
+=======
+                    "dev-master": "8.3-dev"
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 }
             },
             "autoload": {
@@ -759,7 +801,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2019-10-07T12:57:41+00:00"
+=======
+            "time": "2019-09-14T09:12:03+00:00"
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

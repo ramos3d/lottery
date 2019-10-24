@@ -100,6 +100,19 @@ final class Invocation implements SelfDescribing
         return $this->parameters;
     }
 
+<<<<<<< HEAD
+=======
+    public function getReturnType(): string
+    {
+        return $this->returnType;
+    }
+
+    public function isReturnTypeNullable(): bool
+    {
+        return $this->isReturnTypeNullable;
+    }
+
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     /**
      * @throws RuntimeException
      *
@@ -174,7 +187,11 @@ final class Invocation implements SelfDescribing
         );
     }
 
+<<<<<<< HEAD
     public function getObject(): object
+=======
+    public function getObject(): ?object
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     {
         return $this->object;
     }

@@ -9,7 +9,11 @@
  */
 namespace PHPUnit\Framework\MockObject\Builder;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\Rule\AnyParameters;
+=======
+use PHPUnit\Framework\MockObject\Matcher\AnyParameters;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -36,7 +40,11 @@ interface ParametersMatch extends Match
     public function with(...$arguments);
 
     /**
+<<<<<<< HEAD
      * Sets a rule which allows any kind of parameters.
+=======
+     * Sets a matcher which allows any kind of parameters.
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
      *
      * Some examples:
      * <code>

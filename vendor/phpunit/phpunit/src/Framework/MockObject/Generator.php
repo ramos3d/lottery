@@ -11,7 +11,11 @@ namespace PHPUnit\Framework\MockObject;
 
 use Doctrine\Instantiator\Exception\ExceptionInterface as InstantiatorException;
 use Doctrine\Instantiator\Instantiator;
+<<<<<<< HEAD
 use PHPUnit\Framework\InvalidArgumentException;
+=======
+use PHPUnit\Util\InvalidArgumentHelper;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
 /**
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
@@ -55,11 +59,19 @@ final class Generator
     public function getMock($type, $methods = [], array $arguments = [], string $mockClassName = '', bool $callOriginalConstructor = true, bool $callOriginalClone = true, bool $callAutoload = true, bool $cloneArguments = true, bool $callOriginalMethods = false, object $proxyTarget = null, bool $allowMockingUnknownTypes = true, bool $returnValueGeneration = true): MockObject
     {
         if (!\is_array($type) && !\is_string($type)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'array or string');
         }
 
         if (!\is_array($methods) && null !== $methods) {
             throw InvalidArgumentException::create(2, 'array');
+=======
+            throw InvalidArgumentHelper::factory(1, 'array or string');
+        }
+
+        if (!\is_array($methods) && null !== $methods) {
+            throw InvalidArgumentHelper::factory(2, 'array', $methods);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         if ($type === 'Traversable' || $type === '\\Traversable') {

@@ -54,6 +54,10 @@ use PHPUnit\Framework\Constraint\StringMatchesFormatDescription;
 use PHPUnit\Framework\Constraint\StringStartsWith;
 use PHPUnit\Framework\Constraint\TraversableContains;
 use PHPUnit\Framework\Constraint\TraversableContainsOnly;
+<<<<<<< HEAD
+=======
+use PHPUnit\Util\InvalidArgumentHelper;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Util\Type;
 use PHPUnit\Util\Xml;
 use ReflectionClass;
@@ -83,14 +87,22 @@ abstract class Assert
     public static function assertArrayHasKey($key, $array, string $message = ''): void
     {
         if (!(\is_int($key) || \is_string($key))) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 1,
                 'integer or string'
             );
         }
 
         if (!(\is_array($array) || $array instanceof ArrayAccess)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 2,
                 'array or ArrayAccess'
             );
@@ -120,14 +132,22 @@ abstract class Assert
         self::createWarning('assertArraySubset() is deprecated and will be removed in PHPUnit 9.');
 
         if (!(\is_array($subset) || $subset instanceof ArrayAccess)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 1,
                 'array or ArrayAccess'
             );
         }
 
         if (!(\is_array($array) || $array instanceof ArrayAccess)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 2,
                 'array or ArrayAccess'
             );
@@ -151,14 +171,22 @@ abstract class Assert
     public static function assertArrayNotHasKey($key, $array, string $message = ''): void
     {
         if (!(\is_int($key) || \is_string($key))) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 1,
                 'integer or string'
             );
         }
 
         if (!(\is_array($array) || $array instanceof ArrayAccess)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 2,
                 'array or ArrayAccess'
             );
@@ -207,7 +235,11 @@ abstract class Assert
             );
         } elseif (\is_string($haystack)) {
             if (!\is_string($needle)) {
+<<<<<<< HEAD
                 throw InvalidArgumentException::create(
+=======
+                throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                     1,
                     'string'
                 );
@@ -218,7 +250,11 @@ abstract class Assert
                 $ignoreCase
             );
         } else {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 2,
                 'array, traversable or string'
             );
@@ -299,7 +335,11 @@ abstract class Assert
             );
         } elseif (\is_string($haystack)) {
             if (!\is_string($needle)) {
+<<<<<<< HEAD
                 throw InvalidArgumentException::create(
+=======
+                throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                     1,
                     'string'
                 );
@@ -312,7 +352,11 @@ abstract class Assert
                 )
             );
         } else {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 2,
                 'array, traversable or string'
             );
@@ -484,7 +528,11 @@ abstract class Assert
     public static function assertCount(int $expectedCount, $haystack, string $message = ''): void
     {
         if (!$haystack instanceof Countable && !\is_iterable($haystack)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(2, 'countable or iterable');
+=======
+            throw InvalidArgumentHelper::factory(2, 'countable or iterable');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -530,7 +578,11 @@ abstract class Assert
     public static function assertNotCount(int $expectedCount, $haystack, string $message = ''): void
     {
         if (!$haystack instanceof Countable && !\is_iterable($haystack)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(2, 'countable or iterable');
+=======
+            throw InvalidArgumentHelper::factory(2, 'countable or iterable');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         $constraint = new LogicalNot(
@@ -1424,11 +1476,19 @@ abstract class Assert
     public static function assertClassHasAttribute(string $attributeName, string $className, string $message = ''): void
     {
         if (!self::isValidClassAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'valid attribute name');
         }
 
         if (!\class_exists($className)) {
             throw InvalidArgumentException::create(2, 'class name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'valid attribute name');
+        }
+
+        if (!\class_exists($className)) {
+            throw InvalidArgumentHelper::factory(2, 'class name', $className);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat($className, new ClassHasAttribute($attributeName), $message);
@@ -1444,11 +1504,19 @@ abstract class Assert
     public static function assertClassNotHasAttribute(string $attributeName, string $className, string $message = ''): void
     {
         if (!self::isValidClassAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'valid attribute name');
         }
 
         if (!\class_exists($className)) {
             throw InvalidArgumentException::create(2, 'class name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'valid attribute name');
+        }
+
+        if (!\class_exists($className)) {
+            throw InvalidArgumentHelper::factory(2, 'class name', $className);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -1470,11 +1538,19 @@ abstract class Assert
     public static function assertClassHasStaticAttribute(string $attributeName, string $className, string $message = ''): void
     {
         if (!self::isValidClassAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'valid attribute name');
         }
 
         if (!\class_exists($className)) {
             throw InvalidArgumentException::create(2, 'class name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'valid attribute name');
+        }
+
+        if (!\class_exists($className)) {
+            throw InvalidArgumentHelper::factory(2, 'class name', $className);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -1494,11 +1570,19 @@ abstract class Assert
     public static function assertClassNotHasStaticAttribute(string $attributeName, string $className, string $message = ''): void
     {
         if (!self::isValidClassAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'valid attribute name');
         }
 
         if (!\class_exists($className)) {
             throw InvalidArgumentException::create(2, 'class name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'valid attribute name');
+        }
+
+        if (!\class_exists($className)) {
+            throw InvalidArgumentHelper::factory(2, 'class name', $className);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -1522,11 +1606,19 @@ abstract class Assert
     public static function assertObjectHasAttribute(string $attributeName, $object, string $message = ''): void
     {
         if (!self::isValidObjectAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'valid attribute name');
         }
 
         if (!\is_object($object)) {
             throw InvalidArgumentException::create(2, 'object');
+=======
+            throw InvalidArgumentHelper::factory(1, 'valid attribute name');
+        }
+
+        if (!\is_object($object)) {
+            throw InvalidArgumentHelper::factory(2, 'object');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -1548,11 +1640,19 @@ abstract class Assert
     public static function assertObjectNotHasAttribute(string $attributeName, $object, string $message = ''): void
     {
         if (!self::isValidObjectAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'valid attribute name');
         }
 
         if (!\is_object($object)) {
             throw InvalidArgumentException::create(2, 'object');
+=======
+            throw InvalidArgumentHelper::factory(1, 'valid attribute name');
+        }
+
+        if (!\is_object($object)) {
+            throw InvalidArgumentHelper::factory(2, 'object');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -1670,7 +1770,11 @@ abstract class Assert
     public static function assertInstanceOf(string $expected, $actual, string $message = ''): void
     {
         if (!\class_exists($expected) && !\interface_exists($expected)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'class or interface name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'class or interface name');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -1719,7 +1823,11 @@ abstract class Assert
     public static function assertNotInstanceOf(string $expected, $actual, string $message = ''): void
     {
         if (!\class_exists($expected) && !\interface_exists($expected)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'class or interface name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'class or interface name');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -2260,11 +2368,19 @@ abstract class Assert
     public static function assertSameSize($expected, $actual, string $message = ''): void
     {
         if (!$expected instanceof Countable && !\is_iterable($expected)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'countable or iterable');
         }
 
         if (!$actual instanceof Countable && !\is_iterable($actual)) {
             throw InvalidArgumentException::create(2, 'countable or iterable');
+=======
+            throw InvalidArgumentHelper::factory(1, 'countable or iterable');
+        }
+
+        if (!$actual instanceof Countable && !\is_iterable($actual)) {
+            throw InvalidArgumentHelper::factory(2, 'countable or iterable');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -2288,11 +2404,19 @@ abstract class Assert
     public static function assertNotSameSize($expected, $actual, string $message = ''): void
     {
         if (!$expected instanceof Countable && !\is_iterable($expected)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'countable or iterable');
         }
 
         if (!$actual instanceof Countable && !\is_iterable($actual)) {
             throw InvalidArgumentException::create(2, 'countable or iterable');
+=======
+            throw InvalidArgumentHelper::factory(1, 'countable or iterable');
+        }
+
+        if (!$actual instanceof Countable && !\is_iterable($actual)) {
+            throw InvalidArgumentHelper::factory(2, 'countable or iterable');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         static::assertThat(
@@ -3087,12 +3211,20 @@ abstract class Assert
         self::createWarning('readAttribute() is deprecated and will be removed in PHPUnit 9.');
 
         if (!self::isValidClassAttributeName($attributeName)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(2, 'valid attribute name');
+=======
+            throw InvalidArgumentHelper::factory(2, 'valid attribute name');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         if (\is_string($classOrObject)) {
             if (!\class_exists($classOrObject)) {
+<<<<<<< HEAD
                 throw InvalidArgumentException::create(
+=======
+                throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                     1,
                     'class name'
                 );
@@ -3111,7 +3243,11 @@ abstract class Assert
             );
         }
 
+<<<<<<< HEAD
         throw InvalidArgumentException::create(
+=======
+        throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
             1,
             'class name or object'
         );
@@ -3131,11 +3267,19 @@ abstract class Assert
         self::createWarning('getStaticAttribute() is deprecated and will be removed in PHPUnit 9.');
 
         if (!\class_exists($className)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'class name');
         }
 
         if (!self::isValidClassAttributeName($attributeName)) {
             throw InvalidArgumentException::create(2, 'valid attribute name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'class name');
+        }
+
+        if (!self::isValidClassAttributeName($attributeName)) {
+            throw InvalidArgumentHelper::factory(2, 'valid attribute name');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         try {
@@ -3182,11 +3326,19 @@ abstract class Assert
         self::createWarning('getObjectAttribute() is deprecated and will be removed in PHPUnit 9.');
 
         if (!\is_object($object)) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(1, 'object');
         }
 
         if (!self::isValidClassAttributeName($attributeName)) {
             throw InvalidArgumentException::create(2, 'valid attribute name');
+=======
+            throw InvalidArgumentHelper::factory(1, 'object');
+        }
+
+        if (!self::isValidClassAttributeName($attributeName)) {
+            throw InvalidArgumentHelper::factory(2, 'valid attribute name');
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         $reflector = new ReflectionObject($object);

@@ -12,7 +12,11 @@ enough to be used inside any testing framework out there with minimal effort.
 ```php
 <?php
 
+<<<<<<< HEAD
 class UserTest extends PHPUnit\Framework\TestCase
+=======
+class UserTest extends PHPUnit_Framework_TestCase
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 {
     private $prophet;
 
@@ -28,7 +32,11 @@ class UserTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('hashed_pass', $user->getPassword());
     }
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    protected function setup()
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     {
         $this->prophet = new \Prophecy\Prophet;
     }
@@ -206,6 +214,7 @@ $user->setName('everzet')->will(function ($args) use ($user) {
 And now it doesn't matter how many times or in which order your methods are called.
 What matters is their behaviors and how well you faked it.
 
+<<<<<<< HEAD
 Note: If the method is called several times, you can use the following syntax to return different
 values for each call:
 
@@ -217,6 +226,8 @@ This feature is actually not recommended for most cases. Relying on the order of
 calls for the same arguments tends to make test fragile, as adding one more call
 can break everything.
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 #### Arguments wildcarding
 
 The previous example is awesome (at least I hope it is for you), but that's not

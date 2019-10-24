@@ -19,7 +19,11 @@
 
     "require": {
         "php":                               "^5.3|^7.0",
+<<<<<<< HEAD
         "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
+=======
+        "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         "sebastian/comparator":              "^1.1|^2.0|^3.0",
         "doctrine/instantiator":             "^1.0.2",
         "sebastian/recursion-context":       "^1.0|^2.0|^3.0"

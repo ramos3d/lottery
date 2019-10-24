@@ -12,5 +12,9 @@ return array(
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+<<<<<<< HEAD
     'App\\' => array($baseDir . '/app'),
+=======
+    'App\\' => array($baseDir . '/App'),
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 );

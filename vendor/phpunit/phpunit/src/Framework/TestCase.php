@@ -14,6 +14,7 @@ use PHPUnit\Framework\Constraint\Exception as ExceptionConstraint;
 use PHPUnit\Framework\Constraint\ExceptionCode;
 use PHPUnit\Framework\Constraint\ExceptionMessage;
 use PHPUnit\Framework\Constraint\ExceptionMessageRegularExpression;
+<<<<<<< HEAD
 use PHPUnit\Framework\Error\Deprecated;
 use PHPUnit\Framework\Error\Error;
 use PHPUnit\Framework\Error\Notice;
@@ -28,6 +29,17 @@ use PHPUnit\Framework\MockObject\Rule\InvokedAtLeastOnce as InvokedAtLeastOnceMa
 use PHPUnit\Framework\MockObject\Rule\InvokedAtMostCount as InvokedAtMostCountMatcher;
 use PHPUnit\Framework\MockObject\Rule\InvokedCount as InvokedCountMatcher;
 use PHPUnit\Framework\MockObject\Stub;
+=======
+use PHPUnit\Framework\MockObject\Generator as MockGenerator;
+use PHPUnit\Framework\MockObject\Matcher\AnyInvokedCount as AnyInvokedCountMatcher;
+use PHPUnit\Framework\MockObject\Matcher\InvokedAtIndex as InvokedAtIndexMatcher;
+use PHPUnit\Framework\MockObject\Matcher\InvokedAtLeastCount as InvokedAtLeastCountMatcher;
+use PHPUnit\Framework\MockObject\Matcher\InvokedAtLeastOnce as InvokedAtLeastOnceMatcher;
+use PHPUnit\Framework\MockObject\Matcher\InvokedAtMostCount as InvokedAtMostCountMatcher;
+use PHPUnit\Framework\MockObject\Matcher\InvokedCount as InvokedCountMatcher;
+use PHPUnit\Framework\MockObject\MockBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Framework\MockObject\Stub\ConsecutiveCalls as ConsecutiveCallsStub;
 use PHPUnit\Framework\MockObject\Stub\Exception as ExceptionStub;
 use PHPUnit\Framework\MockObject\Stub\ReturnArgument as ReturnArgumentStub;
@@ -494,6 +506,7 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
         $this->expectedExceptionMessage = $message;
     }
 
+<<<<<<< HEAD
     public function expectExceptionMessageMatches(string $regularExpression): void
     {
         $this->expectedExceptionMessageRegExp = $regularExpression;
@@ -505,6 +518,11 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
     public function expectExceptionMessageRegExp(string $regularExpression): void
     {
         $this->expectExceptionMessageMatches($regularExpression);
+=======
+    public function expectExceptionMessageRegExp(string $messageRegExp): void
+    {
+        $this->expectedExceptionMessageRegExp = $messageRegExp;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     }
 
     /**
@@ -524,6 +542,7 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
         $this->doesNotPerformAssertions = true;
     }
 
+<<<<<<< HEAD
     public function expectDeprecation(): void
     {
         $this->expectException(Deprecated::class);
@@ -584,6 +603,8 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
         $this->expectExceptionMessageRegExp($regularExpression);
     }
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
     public function getStatus(): int
     {
         return $this->status;
@@ -1545,6 +1566,7 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
     }
 
     /**
+<<<<<<< HEAD
      * Makes configurable stub for the specified class.
      *
      * @psalm-template RealInstanceType of object
@@ -1558,6 +1580,9 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
 
     /**
      * Returns a mock object for the specified class.
+=======
+     * Returns a test double for the specified class.
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
      *
      * @param string|string[] $originalClassName
      *
@@ -1576,7 +1601,11 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
     }
 
     /**
+<<<<<<< HEAD
      * Returns a configured mock object for the specified class.
+=======
+     * Returns a configured test double for the specified class.
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
      *
      * @param string|string[] $originalClassName
      *
@@ -1596,7 +1625,11 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
     }
 
     /**
+<<<<<<< HEAD
      * Returns a partial mock object for the specified class.
+=======
+     * Returns a partial test double for the specified class.
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
      *
      * @param string|string[] $originalClassName
      * @param string[]        $methods
@@ -1612,12 +1645,18 @@ abstract class TestCase extends Assert implements SelfDescribing, Test
         foreach ($class_names as $class_name) {
             $reflection = new \ReflectionClass($class_name);
 
+<<<<<<< HEAD
             $mockedMethodsThatDontExist = \array_filter(
                 $methods,
                 static function (string $method) use ($reflection) {
                     return !$reflection->hasMethod($method);
                 }
             );
+=======
+            $mockedMethodsThatDontExist = \array_filter($methods, function (string $method) use ($reflection) {
+                return !$reflection->hasMethod($method);
+            });
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
             if ($mockedMethodsThatDontExist) {
                 $this->addWarning(

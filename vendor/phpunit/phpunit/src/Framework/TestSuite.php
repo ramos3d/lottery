@@ -13,6 +13,10 @@ use PHPUnit\Runner\BaseTestRunner;
 use PHPUnit\Runner\Filter\Factory;
 use PHPUnit\Runner\PhptTestCase;
 use PHPUnit\Util\FileLoader;
+<<<<<<< HEAD
+=======
+use PHPUnit\Util\InvalidArgumentHelper;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Util\Test as TestUtil;
 
 /**
@@ -123,7 +127,11 @@ class TestSuite implements \IteratorAggregate, SelfDescribing, Test
     public function __construct($theClass = '', string $name = '')
     {
         if (!\is_string($theClass) && !$theClass instanceof \ReflectionClass) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 1,
                 'ReflectionClass object or string'
             );
@@ -268,7 +276,11 @@ class TestSuite implements \IteratorAggregate, SelfDescribing, Test
     public function addTestSuite($testClass): void
     {
         if (!(\is_object($testClass) || (\is_string($testClass) && \class_exists($testClass)))) {
+<<<<<<< HEAD
             throw InvalidArgumentException::create(
+=======
+            throw InvalidArgumentHelper::factory(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
                 1,
                 'class name or object'
             );
@@ -510,9 +522,13 @@ class TestSuite implements \IteratorAggregate, SelfDescribing, Test
             return $result;
         }
 
+<<<<<<< HEAD
         /** @psalm-var class-string $className */
         $className   = $this->name;
         $hookMethods = TestUtil::getHookMethods($className);
+=======
+        $hookMethods = TestUtil::getHookMethods($this->name);
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
         $result->startTestSuite($this);
 

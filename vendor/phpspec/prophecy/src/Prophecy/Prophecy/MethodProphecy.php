@@ -71,7 +71,11 @@ class MethodProphecy
         }
 
         if (version_compare(PHP_VERSION, '7.0', '>=') && true === $reflectedMethod->hasReturnType()) {
+<<<<<<< HEAD
             $type = PHP_VERSION_ID >= 70100 ? $reflectedMethod->getReturnType()->getName() : (string) $reflectedMethod->getReturnType();
+=======
+            $type = (string) $reflectedMethod->getReturnType();
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
             if ('void' === $type) {
                 $this->voidReturnType = true;
@@ -181,6 +185,7 @@ class MethodProphecy
     }
 
     /**
+<<<<<<< HEAD
      * @param array $items
      *
      * @return $this
@@ -215,6 +220,8 @@ class MethodProphecy
     }
 
     /**
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
      * Sets return argument promise to the prophecy.
      *
      * @param int $index The zero-indexed number of the argument to return

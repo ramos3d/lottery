@@ -34,7 +34,11 @@ private function bar(...$args)
             }
         }
 
+<<<<<<< HEAD
         $this->__phpunit_getInvocationHandler()->invoke(
+=======
+        $this->__phpunit_getInvocationMocker()->invoke(
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
             new \PHPUnit\Framework\MockObject\Invocation(
                 'Foo', 'bar', $__phpunit_arguments, '', $this, false, true
             )

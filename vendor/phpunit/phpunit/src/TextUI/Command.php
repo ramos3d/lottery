@@ -17,6 +17,10 @@ use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestListener;
 use PHPUnit\Framework\TestSuite;
+<<<<<<< HEAD
+=======
+use PHPUnit\Runner\PhptTestCase;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 use PHPUnit\Runner\StandardTestSuiteLoader;
 use PHPUnit\Runner\TestSuiteLoader;
 use PHPUnit\Runner\TestSuiteSorter;
@@ -776,10 +780,13 @@ class Command
 
         $this->handleCustomTestSuite();
 
+<<<<<<< HEAD
         if (!isset($this->arguments['testSuffixes'])) {
             $this->arguments['testSuffixes'] = ['Test.php', '.phpt'];
         }
 
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         if (!isset($this->arguments['test'])) {
             if (isset($this->options[1][0])) {
                 $this->arguments['test'] = $this->options[1][0];
@@ -807,6 +814,7 @@ class Command
                 $this->arguments['testFile'] = \realpath($this->arguments['test']);
                 $this->arguments['test']     = \substr($this->arguments['test'], 0, \strrpos($this->arguments['test'], '.'));
             }
+<<<<<<< HEAD
 
             if (isset($this->arguments['test']) &&
                 \is_string($this->arguments['test']) &&
@@ -815,6 +823,12 @@ class Command
                 $suite->addTestFile($this->arguments['test']);
                 $this->arguments['test'] = $suite;
             }
+=======
+        }
+
+        if (!isset($this->arguments['testSuffixes'])) {
+            $this->arguments['testSuffixes'] = ['Test.php', '.phpt'];
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         }
 
         if (isset($includePath)) {
@@ -928,6 +942,16 @@ class Command
             $this->arguments['printer'] = $this->handlePrinter($this->arguments['printer']);
         }
 
+<<<<<<< HEAD
+=======
+        if (isset($this->arguments['test']) && \is_string($this->arguments['test']) && \substr($this->arguments['test'], -5, 5) === '.phpt') {
+            $test = new PhptTestCase($this->arguments['test']);
+
+            $this->arguments['test'] = new TestSuite;
+            $this->arguments['test']->addTest($test);
+        }
+
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         if (!isset($this->arguments['test'])) {
             $this->showHelp();
             exit(TestRunner::EXCEPTION_EXIT);

@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 use PHPUnit\Framework\Constraint\IsEqual;
 use PHPUnit\Framework\MockObject\Builder\InvocationMocker;
 use PHPUnit\Framework\MockObject\IncompatibleReturnValueException;
@@ -16,6 +17,11 @@ use PHPUnit\Framework\MockObject\InvocationHandler;
 use PHPUnit\Framework\MockObject\Matcher;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\TestFixture\MockObject\ClassWithImplicitProtocol;
+=======
+use PHPUnit\Framework\MockObject\IncompatibleReturnValueException;
+use PHPUnit\Framework\MockObject\Stub\MatcherCollection;
+use PHPUnit\Framework\TestCase;
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
 /**
  * @covers \PHPUnit\Framework\MockObject\Builder\InvocationMocker
@@ -85,10 +91,18 @@ final class InvocationMockerTest extends TestCase
 
     public function testWillFailWhenTryingToPerformExpectationUnconfigurableMethod(): void
     {
+<<<<<<< HEAD
         $matcherCollection = new InvocationHandler([], false);
         $invocationMocker  = new InvocationMocker(
             $matcherCollection,
             new Matcher($this->any())
+=======
+        /** @var MatcherCollection|\PHPUnit\Framework\MockObject\MockObject $matcherCollection */
+        $matcherCollection = $this->createMock(MatcherCollection::class);
+        $invocationMocker  = new \PHPUnit\Framework\MockObject\Builder\InvocationMocker(
+            $matcherCollection,
+            $this->any()
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
         );
 
         $this->expectException(RuntimeException::class);
@@ -112,7 +126,11 @@ final class InvocationMockerTest extends TestCase
         $mock = $this->getMockBuilder(ClassWithAllPossibleReturnTypes::class)
             ->getMock();
 
+<<<<<<< HEAD
         $invocationMocker = $mock->method(new IsEqual('methodWithBoolReturnTypeDeclaration'));
+=======
+        $invocationMocker = $mock->method(new \PHPUnit\Framework\Constraint\IsEqual('methodWithBoolReturnTypeDeclaration'));
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 
         $this->expectException(IncompatibleReturnValueException::class);
         $this->expectExceptionMessage('Method methodWithBoolReturnTypeDeclaration may not return value of type integer, its return declaration is ": bool"');
@@ -205,6 +223,7 @@ final class InvocationMockerTest extends TestCase
         $this->expectExceptionMessage('Method methodWithVoidReturnTypeDeclaration may not return value of type boolean, its return declaration is ": void"');
         $method->willReturn(true);
     }
+<<<<<<< HEAD
 
     public function testExpectationsAreEnabledByPreviousMethodCallWhenChainedWithAfter(): void
     {
@@ -238,4 +257,6 @@ final class InvocationMockerTest extends TestCase
         $mock->firstCall();
         $mock->secondCall();
     }
+=======
+>>>>>>> 91dcab61a26f2b87ebabfb1b020636b3dcc87f2a
 }
